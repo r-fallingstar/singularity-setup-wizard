@@ -33,7 +33,7 @@ COPY = {
 'check': ('状態を再確認', 'Check status again'),
 'no_devices': ('端末が見つかりません。接続とUSBデバッグの許可を確認してください。', 'No headsets found. Check the cable and USB debugging authorization.'),
 'select': ('許可済みの端末を1台選んでください。', 'Select one authorized headset.'),
-'preview': ('プレビュー版 0.1.0', 'Preview 0.1.0'),
+'preview': ('プレビュー版 0.1.1', 'Preview 0.1.1'),
 'wireless_on': ('このPCでワイヤレスADBの自動接続を有効化', 'Enable automatic wireless ADB on this PC'),
 'wireless_off': ('このPCの自動接続を停止', 'Stop automatic connection on this PC'),
 'wireless_confirm': ('選んだQuestでワイヤレスADBを有効にし、Windowsログイン時にこのPCから自動接続します。同じ信頼できるLANで使ってください。IP変更にも追従します。有効にしますか？', 'Enable wireless ADB on the selected Quest and reconnect from this PC at Windows sign-in. Use a trusted LAN. Discovery follows IP changes. Enable now?'),

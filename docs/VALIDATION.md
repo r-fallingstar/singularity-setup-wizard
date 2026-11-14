@@ -1,5 +1,23 @@
 # Validation scope
 
+## 0.1.1 startup repair
+
+A real reboot after 0.1.0 installation exposed a user-space restart race: the
+old Magisk daemon was killed, but the immediate startup client received
+`Connection reset by peer` and no daemon remained. The helper now waits after
+termination and makes at most eight daemon-readiness attempts, requiring both
+root and shell clients to succeed before writing the boot completion marker.
+It can restart an existing Magisk runtime without rerunning its installer.
+No additional exploit attempts or automatic reboots were introduced.
+
+19 automated tests pass, including transient daemon-startup failure and the
+retry limit. A 0.1.1 hardware reboot restored ordinary UID/GID 0, the root
+helper's current-boot marker, wireless ADB, the saved 6GHz pin, and the manual
+sleep wake lock. A second consecutive reboot passed the same checks. The user
+confirmed the Virtual Desktop PC image, no automatic sleep after removing the
+headset for over 30 seconds, and physical power-button sleep/wake. This is still
+a preview on the previously documented model/build.
+
 ## Hardware evidence from the original helpers
 
 The original local implementation was tested on Quest Pro / build 51503870035800340 / Singularity 1.0.8.5:

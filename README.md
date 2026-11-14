@@ -4,9 +4,9 @@
 
 An **unofficial**, bilingual Windows + Quest companion for an already rootable Quest Pro. It guides setup of a narrow firmware-update protection profile while leaving app updates, Meta sign-in and Virtual Desktop network access alone. It is not affiliated with Lumince, Meta, or Virtual Desktop.
 
-**Preview 0.1.0.** Validated configuration: **Quest Pro (seacliff), build 51503870035800340, official Singularity 1.0.8.5**. Other models/builds are diagnostics-only. This is not a general-purpose Quest rooting tool.
+**Preview 0.1.1.** Validated configuration: **Quest Pro (seacliff), build 51503870035800340, official Singularity 1.0.8.5**. Other models/builds are diagnostics-only. This is not a general-purpose Quest rooting tool.
 
-[Download the Windows preview](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.0) · [Validation details](docs/VALIDATION.md)
+[Download the Windows preview](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.1) · [Validation details](docs/VALIDATION.md)
 
 ![English setup wizard](docs/desktop-en.png)
 

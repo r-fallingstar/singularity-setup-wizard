@@ -142,4 +142,35 @@ class AndroidCommandTests(unittest.TestCase):
         result=subprocess.run([str(bash),'--noprofile','--norc','-c',mock+function+'\ndisable com.example/.Service\ndisable com.example'],capture_output=True,text=True,check=True)
         self.assertEqual(result.stdout.splitlines(),['1000 -c pm disable --user 0 com.example/.Service','1000 -c pm disable-user --user 0 com.example'])
 
+class DaemonRestartTests(unittest.TestCase):
+    def run_daemon_simulation(self,behavior):
+        bash=Path('C:/Program Files/Git/bin/bash.exe')
+        if not bash.is_file():self.skipTest('Git Bash not installed')
+        source=(Path(__file__).resolve().parents[1]/'payload/root-helper.sh').read_text()
+        functions=source[source.index('daemon_pid() {'):source.index('\nensure_normal_daemon ||')]
+        return subprocess.run([str(bash),'--noprofile','--norc','-c',functions+'\n'+behavior],capture_output=True,text=True,check=True).stdout
+    def test_bad_gid_waits_and_recovers_after_one_startup_reset(self):
+        output=self.run_daemon_simulation('''
+state=bad; starts=0; kills=0; waits=0
+daemon_pid() { [ "$state" != none ] && echo 42; }
+daemon_group() { if [ "$state" = good ]; then echo 0; else echo 999; fi; }
+start_daemon() { starts=$((starts+1)); [ "$starts" = 1 ] && return 1; state=good; }
+kill() { kills=$((kills+1)); state=none; }
+sleep() { waits=$((waits+1)); }
+chmod() { :; }
+su() { [ "$state" = good ]; }
+ensure_normal_daemon || exit 99
+printf 'RESULT %s %s %s\\n' "$starts" "$kills" "$waits"
+''')
+        self.assertIn('RESULT 2 1 3',output)
+    def test_daemon_failure_is_bounded(self):
+        output=self.run_daemon_simulation('''
+starts=0
+daemon_pid() { :; }
+start_daemon() { starts=$((starts+1)); return 1; }
+sleep() { :; }
+if ensure_normal_daemon; then exit 99; else printf 'RESULT %s %s\\n' "$?" "$starts"; fi
+''')
+        self.assertIn('RESULT 18 8',output)
+
 if __name__=='__main__':unittest.main()

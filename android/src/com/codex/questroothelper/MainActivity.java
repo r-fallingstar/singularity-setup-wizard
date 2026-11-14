@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
     }
     if(page>0)button(t("戻る","Back"),new View.OnClickListener(){public void onClick(View v){page--;draw();}});
     if(page<4)button(t("次へ","Next"),new View.OnClickListener(){public void onClick(View v){page++;draw();}});
-    text(t("プレビュー版 0.1.0 · 通信先は端末内のみ", "Preview 0.1.0 · Helper connections stay on device"),14);
+    text(t("プレビュー版 0.1.1 · 通信先は端末内のみ", "Preview 0.1.1 · Helper connections stay on device"),14);
   }
   private void open(String pkg,String cls) {
     try {startActivity(new Intent().setComponent(new ComponentName(pkg,cls)));}

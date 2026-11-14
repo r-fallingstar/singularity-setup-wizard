@@ -4,9 +4,9 @@
 
 Quest Proの設定を案内する、**非公式の日英対応ウィザード**です。Windows版で接続・導入・設定を進め、Quest内のアプリで起動時の補助や状態確認、追加設定ができます。Lumince・Meta・Virtual Desktopの公式ツールではありません。
 
-**プレビュー版 0.1.0。** 確認済みの構成は **Quest Pro（seacliff）/ OSビルド51503870035800340 / 公式Singularity 1.0.8.5** です。他の機種・ビルドは診断のみで、変更を適用しません。
+**プレビュー版 0.1.1。** 確認済みの構成は **Quest Pro（seacliff）/ OSビルド51503870035800340 / 公式Singularity 1.0.8.5** です。他の機種・ビルドは診断のみで、変更を適用しません。
 
-[Windows版のダウンロード](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.0) · [動作確認の範囲](docs/VALIDATION.md)
+[Windows版のダウンロード](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.1) · [動作確認の範囲](docs/VALIDATION.md)
 
 ![日本語のセットアップ画面](docs/desktop-ja.png)
 
