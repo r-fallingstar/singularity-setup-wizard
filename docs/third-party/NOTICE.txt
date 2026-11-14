@@ -1,0 +1,12 @@
+The Windows executable embeds a Python runtime and Tcl/Tk, and is packaged
+with the PyInstaller bootloader and its runtime hooks. Their license texts
+are included in this folder. PyInstaller's bootloader exception permits
+distribution of the combined executable; the project's own code is MIT.
+
+OpenSSL is used by the bundled Python runtime. See OPENSSL.txt (Apache 2.0).
+Python, Tcl/Tk, OpenSSL and PyInstaller are separate projects and do not
+endorse this application.
+
+Singularity, its exploit binaries, Magisk APKs, Google platform-tools,
+Android SDK/NDK and Java are not distributed in this release. Obtain those
+separately from their respective authors under their own licenses.
