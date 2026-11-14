@@ -8,6 +8,10 @@ An **unofficial**, bilingual Windows + Quest companion for an already rootable Q
 
 [Download the Windows preview](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.1) · [Validation details](docs/VALIDATION.md)
 
+**Upgrading from 0.1.0:** use the Windows wizard and apply setup again. Installing
+only the companion APK does not replace the previously deployed root helper
+script. Version 0.1.1 fixes a daemon-startup race found during a real reboot test.
+
 ![English setup wizard](docs/desktop-en.png)
 
 ## Included helpers

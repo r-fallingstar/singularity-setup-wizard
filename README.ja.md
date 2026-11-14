@@ -8,6 +8,8 @@ Quest Proの設定を案内する、**非公式の日英対応ウィザード**�
 
 [Windows版のダウンロード](https://github.com/r-fallingstar/singularity-setup-wizard/releases/tag/v0.1.1) · [動作確認の範囲](docs/VALIDATION.md)
 
+**0.1.0からの更新：** Windows版でセットアップを再適用してください。APKの上書きだけでは、端末へ配置済みのroot補助スクリプトは更新されません。0.1.1では実機再起動で見つかったMagisk起動競合を修正しています。
+
 ![日本語のセットアップ画面](docs/desktop-ja.png)
 
 ## 含まれる補助ツール
